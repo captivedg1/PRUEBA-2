@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Santander</title>
+    <link rel="stylesheet" href="./flujo-santander.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      function showFormStepOne() {
+        main.setAttribute("style", "display:none;");
+        firstStep.setAttribute("style", "display:block;");
+        containerPagos.setAttribute("style", "display:none;");
+      }
+      function showStepTwo() {
+        firstStep.setAttribute("style", "display:none;");
+        twoStep.setAttribute("style", "display:block;");
+      }
+      function showStepThree() {
+        twoStep.setAttribute("style", "display:none;");
+        threeStep.setAttribute("style", "display:block;");
+      }
+      function showStepFour() {
+        threeStep.setAttribute("style", "display:none;");
+        fourStep.setAttribute("style", "display:block;");
+      }
+      function showStepFive() {
+        fourStep.setAttribute("style", "display:none;");
+        fiveStep.setAttribute("style", "display:block;");
+      }
+      function showMain() {
+        fiveStep.setAttribute("style", "display:none;");
+        main.setAttribute("style", "display:block;");
+        containerPagos.setAttribute("style", "display:block;");
+      }
+      function onRouteIbk() {
+        window.open(
+          "http://images.masterbase.com/v1/santandermktpe/b/1/Manual_Interbank_libre.pdf"
+        );
+      }
+      function onRouteBbva() {
+        window.open(
+          "http://images.masterbase.com/v1/santandermktpe/b/1/Manual_BBVA_libre.pdf"
+        );
+      }
+      function onRouteChannelPay() {
+        window.open("https://www.santanderconsumer.com.pe/#/canales-pago");
+      }
+    </script>
+  </head>
+  <body style="margin: 0;">
+    <!-- Header -->
+    <header class="header-cancelar">
+      <div class="header-cancelar-division">
+        <div class="logo-santander">
+          <img src="https://i.postimg.cc/BbNZqpw2/LOGO-SANTANDER.png" alt="" />
+        </div>
+
+        <nav class="navegacion-padre">
+          <ul class="padre-separado">
+            <li>
+              <a href="">Solicitar Crédito</a>
+            </li>
+            <li>
+              <a href="">Promociones</a>
+            </li>
+            <li>
+              <a href="">Productos</a>
+            </li>
+            <li>
+              <a href="">Canales de Pago</a>
+            </li>
+            <li class="telefono">
+              (01)519-5600
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-mobile">
+          <img src="https://i.postimg.cc/JnyWnsdt/icono-menu.png" alt="" />
+        </nav>
+      </div>
+    </header>
+
+    <!-- INFORMACION -->
+    <section class="banner-intro-image">
+      <img
+        class="banner-image"
+        src="https://i.postimg.cc/dVz0z406/IMAGEN-CABECERA.png"
+        alt=""
+      />
+      <img
+        class="banner-image-mobile"
+        src="https://i.postimg.cc/j2GWv85T/banner-lugares-mobile.png"
+        alt=""
+      />
+      <div class="banner-intro-after">
+        <h1>Canales de pago</h1>
+      </div>
+      <div class="banner-intro-before"></div>
+    </section>
+
+    <div class="contenedor-stepper" id="formStepper">
+      <div class="panel-pago">
+        <!-- MAIN -->
+        <div class="contenido-panel-pago" style="display: block;">
+          <h1>Pago Online</h1>
+          <img src="https://i.postimg.cc/RFKNzcBT/LOGO-VISADEBITO.png" alt="" />
+          <p>Selecciona tu modalidad de pago:</p>
+          <div>
+            <button class="boton-pago-online">Paga tu cuota</button>
+            <button class="boton-pago-online">
+              Afíliate a cargo recurrente
+            </button>
+          </div>
+          <a href="#formStepper" onclick="showFormStepOne();"
+            >Cancelar suscripción</a
+          >
+        </div>
+        <!-- Pasos Formulario Flujo  Cancelar -->
+        <!-- PASO   1 -->
+        <div style="display: none;" class="contenido-first" id="paso1">
+          <div class="logo-sant">
+            <img
+              src="https://i.postimg.cc/0yTCJ77s/LOGO-SANTANDER.png"
+              alt=""
+            />
+          </div>
+          <div class="step-one">
+            <img
+              src="https://i.postimg.cc/C1QXZmH4/CONTADOR-B-1.png"
+              alt=""
+              class="step-6"
+            />
+          </div>
+          <div class="form-step-one form-step-movil">
+            <div class="first-input">
+              <select name="" id="" class="select-input">
+                <option>NRO. DOCUMENTO</option>
+                <option>NRO. OPERACION</option>
+              </select>
+            </div>
+            <div class="second-input">
+              <input type="text" placeholder="Ingrese  No. Documento" />
+            </div>
+            <div class="captcha-santander">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LeGO-kUAAAAAI0ltEK2HilV6VT21Owx0wOkDeud
+              "
+              ></div>
+            </div>
+            <div class="terminos-y-cond">
+              <div class="check-container">
+                <input class="checkmark" type="checkbox" name="terminos" />
+                <p>Acepto los <span>términos y condiciones</span></p>
+                <!-- <span class="checkmark"></span> -->
+              </div>
+            </div>
+            <div class="action-form">
+              <button onclick="showStepTwo();">Consultar</button>
+            </div>
+          </div>
+        </div>
+        <!--  PASO  2 -->
+        <div style="display: none;" class="contenido-first" id="paso2">
+          <div class="logo-sant">
+            <img
+              src="https://i.postimg.cc/0yTCJ77s/LOGO-SANTANDER.png"
+              alt=""
+            />
+          </div>
+          <div class="step">
+            <img
+              src="https://i.postimg.cc/qR4xKXhS/CONTADOR-B-2.png"
+              alt=""
+              class="step-6"
+            />
+          </div>
+          <div class="form-step-one">
+            <div class="info-phone">
+              <p>Si este es tu número de celular</p>
+              <p>haz clic en continuar:</p>
+            </div>
+            <div class="container-input">
+              <!-- <input
+                class="input-phone"
+                type="text"
+                placeholder="XXX-XXX-623"
+                maxlength="9"
+              /> -->
+              <span class="input-phone">XXX-XXX-623</span>
+            </div>
+            <div class="info-update">
+              <p>(*)Si deseas actualizar tu número de celular,</p>
+              <p>por favor, comunícate al 519-5600 Opción 1</p>
+            </div>
+
+            <div class="action-form">
+              <button onclick="showStepThree();">Continuar</button>
+            </div>
+          </div>
+        </div>
+        <!-- PASO  3 -->
+        <div style="display: none;" class="contenido-first" id="paso3">
+          <div class="logo-sant">
+            <img
+              src="https://i.postimg.cc/0yTCJ77s/LOGO-SANTANDER.png"
+              alt=""
+            />
+          </div>
+          <div class="step">
+            <img
+              src="https://i.postimg.cc/5yT3XXhR/CONTADOR-B-3.png"
+              alt=""
+              class="step-6"
+            />
+          </div>
+          <div class="form-step-one">
+            <div class="info-msg">
+              <p>En unos momentos te llegará un mensaje</p>
+              <p>con un pin al celular, por favor,</p>
+              <p>ingrésalo aquí</p>
+            </div>
+            <div class="container-pin">
+              <input
+                class="input-pin"
+                type="text"
+                placeholder="PIN"
+                maxlength="4"
+              />
+            </div>
+            <div class="info-update-pin">
+              <p>Si después de 1 minuto no te llega el mensaje</p>
+              <p>de texto, haz clic en reenviar PIN:</p>
+            </div>
+            <div class="info-pin-movil">
+              <p>Si despúes de 1 minuto no te llega</p>
+              <p>el mensaje de texto, haz clic en</p>
+              <p>reenviar PIN:</p>
+            </div>
+            <div class="enlace-pin">
+              <a href="#">Reenviar PIN</a>
+            </div>
+
+            <div class="action-form">
+              <button onclick="showStepFour();">Continuar</button>
+            </div>
+          </div>
+        </div>
+        <!-- PASO 4 -->
+        <div style="display: none;" class="contenido-first" id="paso4">
+          <div class="logo-sant">
+            <img
+              src="https://i.postimg.cc/0yTCJ77s/LOGO-SANTANDER.png"
+              alt=""
+            />
+          </div>
+          <div class="step">
+            <img
+              src="https://i.postimg.cc/02CrH3fH/CONTADOR-B-4.png"
+              alt=""
+              class="step-6"
+            />
+          </div>
+          <div class="form-step-one form-step-4">
+            <div class="info-msg">
+              <p>Estas son las características de</p>
+              <p>tu cargo recurrente:</p>
+            </div>
+            <div class="divider"></div>
+            <div class="container-info-pay">
+              <div class="cuota-mensual">
+                <p>Cuota mensual a debitar:</p>
+                <span>S/ 1141.61</span>
+              </div>
+              <div class="cuota-pagar">
+                <p>Cuotas restantes por pagar:</p>
+                <span>32</span>
+              </div>
+              <div class="fecha-vencimiento">
+                <p>Día de vencimiento:</p>
+                <span>02 de cada mes</span>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="info-cancel">
+              <p>¿Estás seguro de que deseas</p>
+              <p>cancelar tu suscripción?</p>
+            </div>
+
+            <div class="action-form boton-paso4">
+              <button onclick="showStepFive();">Cancelar suscripción</button>
+            </div>
+          </div>
+        </div>
+        <!-- PASO  5 -->
+        <div style="display: none;" class="contenido-first" id="paso5">
+          <div class="logo-sant">
+            <img
+              src="https://i.postimg.cc/0yTCJ77s/LOGO-SANTANDER.png"
+              alt=""
+            />
+          </div>
+          <div class="step">
+            <img
+              src="https://i.postimg.cc/pTG7cPSJ/CONTADOR-B-5.png"
+              alt=""
+              class="step-6"
+            />
+          </div>
+          <div class="form-step-one">
+            <div class="success-cancel">
+              Tu cancelación ha sido exitosa.
+            </div>
+            <div class="divider-custom"></div>
+            <div class="info-channel-pay">
+              <p>Recuerda que estos son</p>
+              <p>nuestros canales de pago:</p>
+            </div>
+
+            <div class="container-channel-pay">
+              <div class="channel-pay">
+                <div class="header">
+                  <p>Paga por nuestra web</p>
+                </div>
+                <div class="content">
+                  <img
+                    class="visa"
+                    src="https://i.postimg.cc/wBw5N237/TARJETA-VISA.png"
+                    alt=""
+                    style="cursor: pointer;"
+                    onclick="onRouteChannelPay()"
+                  />
+                  <img
+                    class="pago-efectivo"
+                    src="https://i.postimg.cc/SxvNzzkm/PAGO-EFECTIVO.png"
+                    alt=""
+                    style="cursor: pointer;"
+                    onclick="onRouteChannelPay();"
+                  />
+                </div>
+              </div>
+              <div class="channel-apps">
+                <div class="header">
+                  <p>Paga desde Apps de bancos</p>
+                </div>
+                <div class="content">
+                  <img
+                    class="image-app-banco"
+                    src="https://i.postimg.cc/SxBbhLmY/PASO-INTERBANK.png"
+                    alt=""
+                    onclick="onRouteIbk();"
+                  />
+                  <img
+                    class="image-app-banco"
+                    src="https://i.postimg.cc/QCty5VXr/PASO-BBVA.png"
+                    alt=""
+                    onclick="onRouteBbva();"
+                  />
+                </div>
+              </div>
+              <div class="channel-ventanilla">
+                <div class="header">
+                  <p>Paga en Ventanilla</p>
+                </div>
+                <div class="content-custom">
+                  <div class="first-row">
+                    <img
+                      src="https://orbita.pe/Mailing/Santander/interbank.svg"
+                      alt=""
+                    /><img
+                      src="https://orbita.pe/Mailing/Santander/bbva.svg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="second-row">
+                    <img
+                      src="https://orbita.pe/Mailing/Santander/banbif.svg"
+                      alt=""
+                    /><img
+                      src="https://orbita.pe/Mailing/Santander/pichincha.svg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-back">
+              <button onclick="showMain();">Regresar</button>
+            </div>
+          </div>
+        </div>
+        <!-- Termino Flujo  Cancelar -->
+      </div>
+    </div>
+
+    <div class="contenedor-canales-pago" id="containerChannelPagos">
+      <div class="contenedor-mas-pagos">
+        <div class="title-canales-pago">
+          <h1>Otros canales de pago</h1>
+        </div>
+
+        <!-- PAGO BBVA -->
+        <div class="pago-bbva">
+          <div class="img-logo">
+            <img src="https://orbita.pe/Mailing/Santander/bbva.svg" alt="" />
+          </div>
+          <div class="lista-canales-pago">
+            <ul>
+              <li>Más de 300 oficinas a nivel nacional.</li>
+              <li>Ahorra tiempo pagando por el canal web.</li>
+            </ul>
+          </div>
+          <div class="lista-tabla">
+            <div class="lugares-item-header">
+              <p>VENTANILLA</p>
+              <p>AGENTE</p>
+              <p>INTERNET</p>
+            </div>
+            <div class="lugares-item-body">
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+            </div>
+          </div>
+        </div>
+        <div class="oficinas-aqui">
+          <p>Oficinas a nivel nacional <span>Aquí</span></p>
+        </div>
+
+        <!-- PAGO BANBIF -->
+        <div class="pago-banbif">
+          <div class="img-logo">
+            <img src="https://orbita.pe/Mailing/Santander/banbif.svg" alt="" />
+          </div>
+          <div class="lista-canales-pago">
+            <ul>
+              <li>Más de 80 oficinas a nivel nacional.</li>
+              <li>Ahorra tiempo pagando por el canal web.</li>
+            </ul>
+          </div>
+          <div class="lista-tabla">
+            <div class="lugares-item-header">
+              <p>VENTANILLA</p>
+              <p>AGENTE</p>
+              <p>INTERNET</p>
+            </div>
+            <div class="lugares-item-body">
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+            </div>
+          </div>
+        </div>
+        <div class="oficinas-aqui">
+          <p>Oficinas a nivel nacional <span>Aquí</span></p>
+        </div>
+
+        <!-- PAGO PICHINCHA -->
+        <div class="pago-pichincha">
+          <div class="img-logo">
+            <img
+              src="https://orbita.pe/Mailing/Santander/pichincha.svg"
+              alt=""
+            />
+          </div>
+          <div class="lista-canales-pago">
+            <ul>
+              <li>Más de 80 oficinas a nivel nacional.</li>
+              <li>Ahorra tiempo pagando por el canal web.</li>
+            </ul>
+          </div>
+          <div class="lista-tabla">
+            <div class="lugares-item-header">
+              <p>VENTANILLA</p>
+              <p>AGENTE</p>
+              <p>INTERNET</p>
+            </div>
+            <div class="lugares-item-body">
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+              <p>Sin costo</p>
+            </div>
+          </div>
+        </div>
+        <div class="oficinas-aqui">
+          <p>Oficinas a nivel nacional <span>Aquí</span></p>
+        </div>
+        <!-- PAGO INTERBANK -->
+        <div class="pago-interbank">
+          <div class="img-logo">
+            <img
+              src="https://orbita.pe/Mailing/Santander/interbank.svg"
+              alt=""
+            />
+          </div>
+
+          <div class="lista-canales-pago">
+            <ul>
+              <li>Más de 80 oficinas a nivel nacional.</li>
+              <li>Horario extendido en Plaza Vea y Vivanda hasta las 9PM.</li>
+              <li>Ahorra tiempo pagando por el canal web y pago automático.</li>
+            </ul>
+          </div>
+          <div class="lista-tabla">
+            <div class="lugares-item-header">
+              <p class="interbank">VENTANILLA</p>
+              <p class="interbank">PLAZA VEA/VIVANDA</p>
+            </div>
+            <div class="lugares-item-body">
+              <p class="interbank">S/ 3.00</p>
+              <p class="interbank">S/ 6.00</p>
+            </div>
+            <div class="lugares-item-header">
+              <p class="interbank">AGENTE</p>
+              <p class="interbank">INTERNET</p>
+            </div>
+            <div class="lugares-item-body">
+              <p class="interbank">Sin costo</p>
+              <p class="interbank">Sin costo</p>
+            </div>
+          </div>
+        </div>
+        <div class="oficinas-aqui">
+          <p>Oficinas a nivel nacional <span>Aquí</span></p>
+        </div>
+      </div>
+      <div class="contenedor-mas-lugares">
+        <p>
+          Recuerda que al acercarte a uno de los Bancos Recaudadores deberás
+          indicar tu DOI (DNI o Carné de Extranjeria) y que vas a pagar a la
+          cuenta recaudadora de Santander Consumer.
+        </p>
+        <p>
+          Asimismo, te informamos que las cuotas de tu crédito Libre
+          Disponibilidad las puedes cancelar en el BBVA y en Banco Pichincha.
+          Muy pronto también podrás hacerlo en el BanBif y en Interbank.
+        </p>
+        <h4>
+          También puedes abonar tus cuotas a través de transferencias
+          Interbancarias
+        </h4>
+        <p>
+          El Código de Cuenta Interbancaria (CCI) lo puedes encontrar en la
+          Carta de Bienvenida o solicitarla a través de nuestra central
+          telefónica (opción 1).
+        </p>
+        <p>
+          Y si prefieres realizar tus pagos en la oficina de Santander Consumer
+          ubicada en la Calle Amador Merino Reyna 411, Piso 1 - San Isidro,
+          Lima; ten en cuenta que nuestro horario de atención en ventanilla es
+          de lunes a viernes de 9 am a 6pm y los sábados de 9am a 1pm.
+        </p>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <section class="section-info-santander">
+      <div class="info-santander">
+        <div class="section-item section-first-item">
+          <h3>Nosotros</h3>
+          <ul>
+            <li><a href="#/Quienes_Somos">Quienes Somos</a></li>
+            <li><a href="#/Contacto">Contáctanos</a></li>
+            <li><a href="#/informacion_interes">Información de interés</a></li>
+          </ul>
+          <!-- CAMBIOS ORBITA -->
+          <h3>Servicio al Cliente</h3>
+          <ul>
+            <li><a href="#/canales-pago">Canales de Pago</a></li>
+            <li><a href="#/preguntas-frecuentes">Preguntas Frecuentes</a></li>
+            <li><a href="#/servicio_cliente">Transparencia</a></li>
+          </ul>
+          <h3>Blog Santander</h3>
+          <ul>
+            <li><a href="#/noticia">Pasión por los autos</a></li>
+          </ul>
+        </div>
+        <!-- Dividers -->
+        <div class="divider-item"></div>
+        <div class="section-item section-second-item">
+          <div class="section-second-llamanos">
+            <h3>Llámanos</h3>
+            <div class="section-llamanos-atencion">
+              <p>Atendemos de Lunes a Viernes</p>
+              <p>de 9 am a 6 pm</p>
+              <p>Sábados de 9 am a 1 pm</p>
+            </div>
+            <div class="section-item-telefono">
+              <img
+                src="https://i.postimg.cc/MTswTxZs/telefono-ic-footer.png"
+                alt=""
+              />
+              <h1>(01)519-5600</h1>
+            </div>
+          </div>
+          <div class="divider-item-social">
+            <a
+              style="display: none;"
+              target="_blank"
+              href="https://twitter.com/SantanderUSA"
+              ><img src="/src/Content/img/twitter-ic.png" alt=""
+            /></a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/santanderconsumerperu/"
+              ><img src="https://i.postimg.cc/sX0gQ366/facebook-ic.png" alt=""
+            /></a>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/user/SANTANDERCONSUMERPE"
+              ><img src="https://i.postimg.cc/59TtfNFj/youtube-ic.png" alt=""
+            /></a>
+          </div>
+        </div>
+        <!-- Dividers -->
+        <div class="divider-item"></div>
+        <div class="section-item section-three-item">
+          <div class="section-three-item-social">
+            <a href="#/reclamaciones"
+              ><img
+                class="libro"
+                src="https://i.postimg.cc/cLQC9yCC/libr-rec-ic.png"
+                alt=""
+            /></a>
+            <img
+              class="compromiso-ico"
+              src="https://i.postimg.cc/cJwRBbyB/compromiso-ic.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Pie de Página -->
+    <footer class="footer-info">
+      <div class="footer-wrapper footer-separado">
+        <div class="footer-wrapper-terminos">
+          <p>© Copyright 2018 - Todos los derechos reservados</p>
+        </div>
+        <div class="footer-wrapper-direcciones footer-wrapper-direcciones-flex">
+          <a href="http://www.santander.com" target="_blank"
+            >www.santander.com</a
+          >
+          <p>|</p>
+          <a href="http://www.santander.com.pe" target="_blank"
+            >www.santander.com.pe</a
+          >
+          <p>|</p>
+          <a href="http://www.bcrp.gob.pe/" target="_blank"
+            >Banco Central de Reserva</a
+          >
+          <p>|</p>
+          <a href="http://www.fsd.org.pe" target="_blank">www.fsd.org.pe</a>
+          <p>|</p>
+          <a href="http://www.sbs.gob.pe/usuarios" target="_blank"
+            >www.sbs.gob.pe</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Modal  Flujo Suscripcion -  PASO 5 -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <!-- <span class="close">&times;</span> -->
+        <div class="close-modal">
+          <img
+            id="closeModal"
+            onclick="cerrarModal()"
+            src="https://i.postimg.cc/5trcBcXQ/X.png"
+            style="cursor: pointer;"
+          />
+        </div>
+
+        <div class="header-modal">
+          <div class="img-h-modal">
+            <img src="https://i.postimg.cc/y6c0FVwc/ICONO-DOLAR.png" alt="" />
+          </div>
+          <div class="info-p-modal">
+            <div class="title-info">Guardar Tarjeta</div>
+            <div class="content-info">
+              <p>Si guardas tu tarjeta podrás comprar</p>
+              <p>
+                las veces que quieras
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="content-form-modal-step4">
+          <div class="divider-linear"></div>
+          <div class="content-form-modal">
+            <div class="form-control">
+              <input type="text" placeholder="Número de Tarjeta" />
+            </div>
+            <div class="form-control-flex">
+              <input type="text" placeholder="Mes/ Año" />
+              <input type="text" placeholder="CVV" />
+            </div>
+            <div class="form-control">
+              <input type="text" placeholder="Correo Electrónico" />
+            </div>
+          </div>
+          <div class="action-modal">
+            <button id="">GUARDAR</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      /*Identificador de  cada  contenido stepper*/
+      let main = document.querySelector(".contenido-panel-pago");
+      let firstStep = document.querySelector("#paso1");
+      let twoStep = document.querySelector("#paso2");
+      let threeStep = document.querySelector("#paso3");
+      let fourStep = document.querySelector("#paso4");
+      let fiveStep = document.querySelector("#paso5");
+      let containerPagos = document.querySelector("#containerChannelPagos");
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("btnSuscribe");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // cerrar modal
+      var cerrarModal = document.querySelector("#closeModal");
+      function cerrarModal() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </body>
+</html>
